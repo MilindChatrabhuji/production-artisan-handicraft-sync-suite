@@ -1,0 +1,29 @@
+{
+  "name": "@earning-machine/production-artisan-handicraft-sync-suite",
+  "version": "1.0.0",
+  "description": "Production Artisan Handicraft Store Catalog & Multi-Channel Inventory Sync Suite with cross-platform atomic stock locking, fair-trade provenance tagging, Etsy/Shopify/WooCommerce schema mapping, Cloudflare Workers token-bucket webhook gateway, and dual-currency agency retainer invoicing.",
+  "main": "engine/sync_engine/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node engine/sync_engine/demo_runner.js",
+    "edge:dev": "wrangler dev",
+    "edge:deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "artisan-handicraft",
+    "inventory-sync",
+    "shopify-sync",
+    "etsy-sync",
+    "woocommerce-sync",
+    "atomic-stock-lock",
+    "cloudflare-workers",
+    "d1-database"
+  ],
+  "author": "Dr. Milind Chatrabhuji",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.80.0"
+  }
+}

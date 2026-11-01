@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAY #83 — Artisan Handicraft Multi-Channel Sync Suite Simulator</title>
+  <style>
+    :root {
+      --bg: #0c120c;
+      --card-bg: #142416;
+      --accent: #4ade80;
+      --accent-hover: #16a34a;
+      --text: #f0fdf4;
+      --text-muted: #86efac;
+      --border: #22543d;
+      --success: #22c55e;
+      --warning: #facc15;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); padding: 24px; min-height: 100vh; }
+    .header { max-width: 1200px; margin: 0 auto 24px auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+    .header h1 { font-size: 22px; color: var(--accent); }
+    .header .badge { background: #166534; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; }
+    .nav-tabs { max-width: 1200px; margin: 0 auto 24px auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .tab-btn { background: var(--card-bg); border: 1px solid var(--border); color: #86efac; padding: 14px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-align: center; }
+    .tab-btn:hover { border-color: var(--accent); color: var(--text); }
+    .tab-btn.active { background: #15803d; color: #ffffff; border-color: #4ade80; }
+    .container { max-width: 1200px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; min-height: 520px; }
+    .screen { display: none; }
+    .screen.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    
+    /* Tables & Grids */
+    .table-responsive { overflow-x: auto; margin-top: 16px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 12px; border: 1px solid var(--border); font-size: 14px; }
+    th { background: #0f1d12; color: var(--accent); }
+    .status-badge { display: inline-block; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 700; background: #166534; color: #fff; }
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .ratecard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .rate-card { background: #0f1d12; border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; }
+    .rate-card h3 { color: var(--accent); margin-bottom: 10px; }
+    .rate-card .price { font-size: 28px; font-weight: 800; color: #fff; margin: 12px 0; }
+
+    /* Forms */
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 6px; font-size: 14px; color: #a7f3d0; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; background: #0f1d12; border: 1px solid var(--border); color: #fff; border-radius: 6px; font-size: 14px; }
+    .btn-action { background: #16a34a; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+    .btn-action:hover { background: #15803d; }
+    .result-box { margin-top: 16px; background: #0f1d12; border: 1px solid var(--border); border-radius: 8px; padding: 16px; font-family: monospace; font-size: 13px; color: #4ade80; max-height: 260px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>Production Artisan Handicraft Store Catalog &amp; Sync Suite</h1>
+      <p style="color: #a7f3d0; font-size: 14px;">Interactive 4-Screen Operational Simulator (WAY #83 / Product 85)</p>
+    </div>
+    <div class="badge">ATOMIC LOCK &lt; 5ms &bull; MULTI-CHANNEL &bull; ZERO CLOUD COST</div>
+  </div>
+
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab(0)">1. Channel Inventory Hub</button>
+    <button class="tab-btn" onclick="switchTab(1)">2. Provenance &amp; Materials Verifier</button>
+    <button class="tab-btn" onclick="switchTab(2)">3. Low-Stock &amp; Atomic Lock Test</button>
+    <button class="tab-btn" onclick="switchTab(3)">4. Agency Retainer Terminal</button>
+  </div>
+
+  <div class="container">
+    <!-- Screen 1 -->
+    <div class="screen active" id="screen-0">
+      <h2 style="margin-bottom: 8px; color: var(--accent);">Multi-Marketplace Channel Inventory Hub</h2>
+      <p style="color: #a7f3d0; font-size: 14px; margin-bottom: 16px;">Real-time stock synchronization across Shopify, Etsy, and WooCommerce with atomic lock isolation.</p>
+      
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Master SKU</th>
+              <th>Artisan Product Title</th>
+              <th>Physical Stock</th>
+              <th>Shopify</th>
+              <th>Etsy</th>
+              <th>WooCommerce</th>
+              <th>Sync Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ART-TEAK-001</code></td>
+              <td>Ergonomic Carved Teak Desk Organizer</td>
+              <td><strong>25</strong></td>
+              <td>25 Units</td>
+              <td>25 Units</td>
+              <td>25 Units</td>
+              <td><span class="status-badge">100% IN SYNC</span></td>
+            </tr>
+            <tr>
+              <td><code>ART-CERAMIC-002</code></td>
+              <td>Hand-Thrown Ceramic Thermal Flask</td>
+              <td><strong>12</strong></td>
+              <td>12 Units</td>
+              <td>12 Units</td>
+              <td>12 Units</td>
+              <td><span class="status-badge">100% IN SYNC</span></td>
+            </tr>
+            <tr>
+              <td><code>ART-BRASS-003</code></td>
+              <td>Lost-Wax Cast Heritage Brass Mortar</td>
+              <td><strong>8</strong></td>
+              <td>8 Units</td>
+              <td>8 Units</td>
+              <td>8 Units</td>
+              <td><span class="status-badge">100% IN SYNC</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 20px;">
+        <button class="btn-action" onclick="refreshInventory()">Trigger Multi-Channel Health Check</button>
+      </div>
+      <div class="result-box" id="hub-result" style="display: none;"></div>
+    </div>
+
+    <!-- Screen 2 -->
+    <div class="screen" id="screen-1">
+      <h2 style="margin-bottom: 16px; color: var(--accent);">Artisan Provenance &amp; Fair-Trade Materials Verifier</h2>
+      <div class="grid-2col">
+        <div>
+          <div class="form-group">
+            <label>Product Master SKU</label>
+            <input type="text" id="prov-sku" value="ART-TEAK-001">
+          </div>
+          <div class="form-group">
+            <label>Artisan Collective Origin</label>
+            <input type="text" id="prov-region" value="Kerala Sahyadri Highlands">
+          </div>
+          <div class="form-group">
+            <label>Craft Technique</label>
+            <select id="prov-technique">
+              <option value="CARVED_TEAK_WOOD">Hand Carved Sustainable Teak Wood</option>
+              <option value="HAND_THROWN_CERAMIC">Wheel Thrown High-Fired Ceramic</option>
+              <option value="BRASS_CAST">Traditional Lost-Wax Brass Casting</option>
+            </select>
+          </div>
+          <button class="btn-action" onclick="verifyProvenance()">Verify Provenance &amp; Ergonomics</button>
+        </div>
+        <div>
+          <div class="result-box" id="prov-result" style="height: 300px; max-height: 300px;">
+            Click "Verify Provenance &amp; Ergonomics" to audit non-toxic certifications and clinical ergonomics score.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3 -->
+    <div class="screen" id="screen-2">
+      <h2 style="margin-bottom: 16px; color: var(--accent);">Low-Stock Alert &amp; Real-Time Atomic Lock Orchestrator</h2>
+      <div class="grid-2col">
+        <div>
+          <div class="form-group">
+            <label>Channel Source (Incoming Sale)</label>
+            <select id="lock-channel">
+              <option value="SHOPIFY">Shopify Storefront Webhook</option>
+              <option value="ETSY">Etsy Marketplace Webhook</option>
+              <option value="WOOCOMMERCE">WooCommerce API Webhook</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Units Ordered</label>
+            <input type="number" id="lock-qty" value="3" min="1" max="10">
+          </div>
+          <button class="btn-action" onclick="executeAtomicLock()">Execute Atomic Stock Lock</button>
+        </div>
+        <div>
+          <div class="result-box" id="lock-result" style="height: 300px; max-height: 300px;">
+            Awaiting order simulation for atomic stock reservation...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 4 -->
+    <div class="screen" id="screen-3">
+      <h2 style="margin-bottom: 16px; color: var(--accent);">Institutional Handicraft Agency Retainer Terminal</h2>
+      <p style="color: #a7f3d0; font-size: 14px; margin-bottom: 24px;">Multi-channel inventory management retainers with dual-currency pro-forma invoicing.</p>
+      
+      <div class="ratecard-grid">
+        <div class="rate-card">
+          <h3>Starter Artisan</h3>
+          <p style="color: #86efac; font-size: 13px;">2 Channels &bull; 50 SKUs</p>
+          <div class="price">$500 <span style="font-size: 14px; font-weight: normal; color: #86efac;">/ mo</span></div>
+          <p style="font-size: 13px; color: #4ade80; margin-bottom: 16px;">Shopify + Etsy Atomic Sync</p>
+          <button class="btn-action" style="width: 100%;" onclick="bookAgency('Starter Retainer', 500, 41500)">Book Retainer</button>
+        </div>
+
+        <div class="rate-card" style="border-color: #4ade80;">
+          <h3 style="color: #4ade80;">Professional Collective</h3>
+          <p style="color: #86efac; font-size: 13px;">4 Channels &bull; 250 SKUs</p>
+          <div class="price">$1,500 <span style="font-size: 14px; font-weight: normal; color: #86efac;">/ mo</span></div>
+          <p style="font-size: 13px; color: #4ade80; margin-bottom: 16px;">Shopify + Etsy + Woo + Amazon</p>
+          <button class="btn-action" style="width: 100%;" onclick="bookAgency('Professional Retainer', 1500, 124500)">Book Retainer</button>
+        </div>
+
+        <div class="rate-card">
+          <h3>Global Export Co-op</h3>
+          <p style="color: #86efac; font-size: 13px;">Unlimited Channels</p>
+          <div class="price">$3,000 <span style="font-size: 14px; font-weight: normal; color: #86efac;">/ mo</span></div>
+          <p style="font-size: 13px; color: #4ade80; margin-bottom: 16px;">Dedicated Cloudflare D1 Cluster</p>
+          <button class="btn-action" style="width: 100%;" onclick="bookAgency('Global Retainer', 3000, 249000)">Book Retainer</button>
+        </div>
+      </div>
+
+      <div class="result-box" id="invoice-result" style="margin-top: 24px; display: none;"></div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(index) {
+      document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
+      });
+      document.querySelectorAll('.screen').forEach((scr, i) => {
+        scr.classList.toggle('active', i === index);
+      });
+    }
+
+    function refreshInventory() {
+      const res = document.getElementById('hub-result');
+      res.style.display = 'block';
+      res.innerHTML = `[MULTI-CHANNEL HEALTH CHECK: 100% OK]
+==================================================
+Active Channels Checked:
+  - Shopify REST API v2024-10: Connected (Latency: 12ms)
+  - Etsy v3 Open API: Connected (Rate limit tokens: 10/10)
+  - WooCommerce REST API v3: Connected (Latency: 18ms)
+Zero split-brain states detected. All 45 active SKUs synchronized.`;
+    }
+
+    function verifyProvenance() {
+      const sku = document.getElementById('prov-sku').value;
+      const region = document.getElementById('prov-region').value;
+      const res = document.getElementById('prov-result');
+      res.innerHTML = `[PROVENANCE &amp; ERGONOMIC EVALUATION]
+--------------------------------------------------
+Product SKU          : ${sku}
+Artisan Origin       : ${region}
+Fair-Trade Compliance: 100% Verified (Fair Living Wage Standard)
+Material Non-Toxicity: Certified Lead-Free &amp; Organic Finishes
+Clinical Ergonomics  : 92 / 100 (High contact comfort &amp; balance)
+Certification Status : 100% APPROVED FOR GLOBAL EXPORT`;
+    }
+
+    function executeAtomicLock() {
+      const ch = document.getElementById('lock-channel').value;
+      const qty = parseInt(document.getElementById('lock-qty').value);
+      const res = document.getElementById('lock-result');
+      res.innerHTML = `[ATOMIC STOCK RESERVATION EXECUTED]
+--------------------------------------------------
+Inbound Order Channel : ${ch}
+Units Reserved        : ${qty}
+Lock Execution Time   : 3.8 ms (Cloudflare Edge Worker)
+Remaining Stock       : 22 Units
+Outbound Broadcast    :
+  - Shopify Stock set to 22 [OK]
+  - Etsy Stock set to 22 [OK]
+  - WooCommerce Stock set to 22 [OK]
+Overselling Probability: 0.000%`;
+    }
+
+    function bookAgency(tierName, usd, inr) {
+      const invBox = document.getElementById('invoice-result');
+      invBox.style.display = 'block';
+      invBox.innerHTML = `[PRO-FORMA INVOICE GENERATED]
+==================================================
+Invoice ID   : INV-SYNC-${Date.now()}
+Retainer     : ${tierName}
+Pricing      : $${usd}.00 USD (Foreign Client) / ₹${inr.toLocaleString()} INR (Domestic Client)
+Payment Modes:
+  - Domestic UPI: milind.chatrabhuji@okhdfcbank
+  - International PayPal: milind.chatrabhuji@gmail.com
+SLA Guarantee: Sub-3 Second Multi-Channel Propagation or 30-day Full Refund.
+Tax Status   : GST LUT Zero-Rated Export or Compliant Domestic Invoicing.`;
+    }
+  </script>
+</body>
+</html>
